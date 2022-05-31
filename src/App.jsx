@@ -10,7 +10,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <ClickedTabProvider>
-                <BrowserRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/search" element={<Search />}></Route>

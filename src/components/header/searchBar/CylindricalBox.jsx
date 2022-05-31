@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {ReactComponent as CrossIcon} from "../../../assets/crossIcon.svg";
 import {ReactComponent as SearchIcon} from "../../../assets/searchIcon.svg";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {useClickedTabContext} from "../../../ClickedTabProvider";
 
 const CylindricalBox = ({title, placeHolder, style, partId, hasSearchButton}) => {
@@ -30,12 +30,12 @@ const CylindricalBox = ({title, placeHolder, style, partId, hasSearchButton}) =>
             )}
             {hasSearchButton &&
                 (isClicked ? (
-                    <Link to="/search" style={{textDecoration: "none"}}>
+                    <NavLink to="/search" style={() => ({textDecoration: "none"})}>
                         <CylindricalSearchButton>
                             <SearchIcon />
                             <span>검색</span>
                         </CylindricalSearchButton>
-                    </Link>
+                    </NavLink>
                 ) : (
                     <CircleSearchButton>
                         <SearchIcon />
